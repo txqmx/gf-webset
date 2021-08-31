@@ -22,6 +22,6 @@ module.exports = {
         return original[index].split('=')[1]
       }
     }
-    return null
+    return 'main'
   }
 }

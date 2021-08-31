@@ -6,9 +6,9 @@
 
 <script>
 export default {
-  name: "test",
-  created() {
-    console.log(process.env.VUE_APP_PROJECT_NAME);
+  name: 'Test',
+  created () {
+    console.log(process.env.VUE_APP_PROJECT_NAME)
   }
 }
 </script>

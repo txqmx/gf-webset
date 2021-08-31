@@ -5,9 +5,20 @@
   "scripts": {
     "dev": "node config/select",
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "build": "vue-cli-service build --project=main",
     "build-all": "node config/build-all.js",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint --project=main",
+    "lint:css": "stylelint 'src/**/*.{html,vue,css,less}'"
+  },
+  "lint-staged": {
+    "*.{js,jsx,vue}": "npm run lint",
+    "*.{vue,css,less,html}": "npm run lint:css"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
   },
   "dependencies": {
     "axios": "^0.21.1",
@@ -19,6 +30,8 @@
     "vuex": "^3.4.0"
   },
   "devDependencies": {
+    "@commitlint/cli": "^13.1.0",
+    "@commitlint/config-conventional": "^13.1.0",
     "@vue/cli-plugin-babel": "~4.5.0",
     "@vue/cli-plugin-eslint": "~4.5.0",
     "@vue/cli-plugin-router": "~4.5.0",
@@ -33,11 +46,17 @@
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.0",
     "eslint-plugin-vue": "^6.2.2",
+    "glob": "^7.1.6",
+    "husky": "^4.3.8",
+    "inquirer": "^7.3.3",
     "less": "^3.0.4",
     "less-loader": "^5.0.0",
-    "vue-template-compiler": "^2.6.11",
-    "inquirer": "^7.3.3",
-    "glob": "^7.1.6"
+    "lint-staged": "^11.1.2",
+    "stylelint": "^13.13.1",
+    "stylelint-config-standard": "^22.0.0",
+    "stylelint-less": "^1.0.1",
+    "stylelint-order": "^4.1.0",
+    "vue-template-compiler": "^2.6.11"
   },
   "postcss": {
     "plugins": {

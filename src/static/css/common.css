@@ -1,30 +1,31 @@
 * {
-    margin: 0;
-    padding: 0;
-    font-size: 14px;
-    user-select: none;
-    font-family: 'Microsoft YaHei';
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+  user-select: none;
+  font-family: 'Microsoft YaHei', serif;
 }
+
 ul,
 li,
 dl,
 dt,
 dd,
 ol {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 
 img {
-    -webkit-user-drag: none; /*图片被拖拽*/
-    border: 0;
+  -webkit-user-drag: none; /* 图片被拖拽 */
+  border: 0;
 }
 
 html,
 body,
 #app {
-    height: 100%;
+  height: 100%;
 }
 
-/******scrollbar******/
+/******  scrollbar  ******/
